@@ -1,0 +1,86 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-20 p-b-30">
+            <div class="login100-form validate-form">
+                <div class="login100-form-avatar">
+                    <img src="img/logo.png" alt="DC">
+                </div>
+                <div class="row  justify-content-md-center">
+
+                </div>
+                <span class="login100-form-title p-t-5 p-b-3">
+                    Welcome back!
+                </span>
+                <span class="login100-form-subtitle p-t-5 p-b-31">
+                    Login to your account
+                </span>
+
+                <div class="wrap-input100 validate-input m-b-30 " data-validate="Username is required">
+                    <input class="input100" type="text" name="username" placeholder="Username">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <div class="container">
+                            <span class="far fa-stack fa-2x " style="margin-left: -53px; text-shadow: 1px 6px 5px 1px;">
+                                <i class="far fa-user fa-stack-1x circle" style="color: #0f4874;font-size: 19px;"></i>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-10" data-validate="Password is required">
+                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <div class="container">
+                            <span class="far fa-stack fa-2x " style="margin-left: -53px;box-shadow: 0px 0px 0px 0px;">
+                                <i class="far fa-lock fa-stack-1x circle" style="color: #0f4874;font-size: 19px;"></i>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+                <div class="p-t-5 p-b-14 p-l-152">
+                    <a href="#" class="txt1">
+                        Forgot Username / Password?
+                    </a>
+                </div>
+                <div class="container-login100-form-btn p-t3 p-b-25">
+                    <button onclick="load_page('home')" class="login100-form-btn">
+                        Login
+                    </button>
+                </div>
+                <d iv class="text-center w-full">
+
+                    <a class="txt1" href="#" onclick="load_page('signup')">
+                        Don't have an account? Sign up here
+                        <i class="fa fa-long-arrow-right"></i>
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- 
+<script>
+    function load_page(page_name) {
+
+        $.ajax({
+            url: URL_SITE,
+            type: "POST",
+            crossOrigin: true,
+            data: {
+                "page_name": "pages/" + page_name,
+            },
+            beforeSend: function () {
+                $("#app").html(' <div style="margin: 80% 0;" class="container"><div class="row"><div class="col-md-6"><img class="mx-auto d-block" width="60%" src="img/DC-light-logo.png"></div></div></div> ');
+            },
+            success: function (msg) {
+
+                // $("#link_scripts").html(link_scripts);
+                $("#app").html(msg);
+
+            },
+        });
+
+    }
+</script> -->

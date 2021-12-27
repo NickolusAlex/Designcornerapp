@@ -1,0 +1,146 @@
+<script>
+    function clickEvent(first, last) {
+        if (first.value.length) {
+            document.getElementById(last).focus();
+        }
+    }
+
+    // $(":input[type='text']").keyup(function(event) {
+    //     if (valid) {
+    //         if ($(this).next('[type="text"]').length > 0) {
+    //             $(this).next('[type="text"]')[0].focus();
+    //         } else {
+    //             if ($(this).parent().next().find('[type="text"]').length > 0) {
+    //                 $(this).parent().next().find('[type="text"]')[0].focus();
+    //             } else {
+    //                 alert('no more text input found !');
+    //             }
+    //         }
+
+    //     }
+    // });
+</script>
+<!-- Modal -->
+<div class="modal fade" id="otp_modal" tabindex="-1" role="dialog" aria-labelledby="otp_modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="otp_modalTitle">Enter OTP</h5>
+                <button type="button" class="close" onclick="modal_toggle('otp_modal')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div style="padding-top: 10px;">
+
+                    <center>
+                        <input type="text" id='ist' style="border: 1px solid black;" maxlength="1" size="1" onkeyup="clickEvent(this,'sec')">
+                        <input type="text" id="sec" style="border: 1px solid black;" maxlength="1" size="1" onkeyup="clickEvent(this,'third')">
+                        <input type="text" id="third" style="border: 1px solid black;" maxlength="1" size="1" onkeyup="clickEvent(this,'fourth')">
+
+                        <input type="text" id="fourth" style="border: 1px solid black;" maxlength="1" size="1" onkeyup="clickEvent(this,'fifth')">
+                        <input type="text" id="fifth" style="border: 1px solid black;" maxlength="1" size="1" onkeyup="clickEvent(this,'sixth')">
+                        <input type="text" id="sixth" style="border: 1px solid black;" maxlength="1" size="1">
+                    </center>
+                    <br>
+
+                    <div class="p-t-5 p-b-14 p-l-238">
+                        <a href="#" class="txt1">
+                            Didn't Receive Code ? <span style="color:blue;"><strong>Resend Code !</strong></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container-login100-form-btn p-t3 p-b-25">
+                <button class="login100-form-btn">
+                    Verify Code
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-10 p-b-30">
+            <form class="login100-form validate-form">
+                <div class="login100-form-avatar_cre">
+                    <img src="img/logo.png" alt="DC">
+                </div>
+                <span class="login100-form-title p-t-5 p-b-3">
+                    Welcome back!
+                </span>
+                <span class="login100-form-subtitle p-t-5 p-b-31">
+                    Create your account
+                </span>
+
+                <div class="wrap-input100 validate-input m-b-30 " data-validate="Username is required">
+                    <input class="input100" type="text" name="username" placeholder="Username">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <div class="container">
+                            <span class="far fa-stack fa-2x " style="margin-left: -53px; text-shadow: 1px 6px 5px 1px;">
+                                <i class="far fa-user fa-stack-1x circle" style="color: #0f4874;font-size: 19px;"></i>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input m-b-30 " data-validate="Email is required">
+                    <input class="input100" type="email" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <div class="container">
+                            <span class="far fa-stack fa-2x " style="margin-left: -53px; text-shadow: 1px 6px 5px 1px;">
+                                <i class="far fa-envelope fa-stack-1x circle" style="color: #0f4874;font-size: 19px;"></i>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input m-b-30" data-validate="Password is required">
+                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <div class="container">
+                            <span class="far fa-stack fa-2x " style="margin-left: -53px;box-shadow: 0px 0px 0px 0px;">
+                                <i class="far fa-lock fa-stack-1x circle" style="color: #0f4874;font-size: 19px;"></i>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input m-b-10 " data-validate="Phone is required">
+                    <input class="input100" type="text" name="phone" placeholder="Phone">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <div class="container">
+                            <span class="far fa-stack fa-2x " style="margin-left: -53px; text-shadow: 1px 6px 5px 1px;">
+                                <i class="far fa-phone fa-stack-1x circle" style="color: #0f4874;font-size: 19px;"></i>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+                <div class="p-t-5 p-b-14 p-l-238">
+                    <a href="#" onclick="modal_toggle('otp_modal')" class="txt1">
+                        <span style="color:red;"><strong>*GET OTP</strong></span>
+                    </a>
+                </div>
+                <div class="container-login100-form-btn p-t3 p-b-25">
+                    <button class="login100-form-btn">
+                        Sign up
+                    </button>
+                </div>
+
+
+                <div class="p-t3 p-l-105 p-b-25">
+                    <a href="#" onclick="load_page('login')" class="txt1">
+                        Already Have Account? Login !
+                    </a>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>

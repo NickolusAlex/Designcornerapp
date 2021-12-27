@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="menu.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+<style>
+    nav {
+        position: fixed !important;
+        background-color: #3c50ff00 !important;
+    }
+
+    .curve {
+        padding-top: 40px;
+        background: rgb(242, 107, 124);
+        background: linear-gradient(0deg, rgba(242, 107, 124, 1) 0%, rgba(245, 134, 125, 1) 39%, rgba(245, 142, 127, 1) 100%);
+        ;
+        top: 0;
+        position: sticky;
+        width: 100vw;
+        margin: 0;
+        /* text-align: center; */
+        height: max-content !important;
+        padding-bottom: 2vh;
+        border-radius: 0 0 30px 30px !important;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.36);
+        /* padding-bottom: 5vh; */
+    }
+
+    .left-align {
+        text-align: left;
+    }
+
+    .right-align {
+        text-align: right;
+    }
+
+    .center-align {
+        text-align: center;
+    }
+
+    .page-content-main {
+        background-color: rgb(255, 199, 207);
+        position: fixed;
+        height: 100vh;
+        display: block;
+        width: 100vw;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .history-div {
+        display: block;
+        position: sticky;
+        background-color: white !important;
+        padding-bottom: 0;
+        max-height: max-content;
+    }
+
+    .order-history {
+        width: 90vw;
+        margin-left: 5vw;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .order-history .col:first-child {
+        border-right: solid 1px gray;
+    }
+
+    .order-history .col:last-child {
+        border-left: solid 1px gray;
+    }
+
+    .order-list {
+        position: relative;
+        width: 90vw;
+        display: block;
+        margin-left: 5vw;
+    }
+
+    .second-container {
+        overflow-y: auto;
+        display: block;
+        position: absolute;
+        margin: auto;
+        margin-top: 20px;
+        height: 50vh;
+        width: 100vw;
+        padding-bottom: 40px;
+    }
+
+    .order-status-individual {
+        padding: 10px 0;
+        margin-top: 2vh;
+        background-color: white;
+        text-align: center;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .order-status-individual .accordion-header .temp-row .temp-col:first-child {
+        border-right: 1px solid gray;
+    }
+
+    .order-status-individual .accordion-header .temp-row .temp-col:last-child {
+        border-left: 1px solid gray;
+    }
+
+    .order-bundle {
+        padding: 10px 0;
+        width: max-content;
+        margin: auto;
+    }
+
+    .order-bundle-status {
+        width: 100%;
+        margin-top: 4.2vw;
+    }
+
+    .accordion-body-head {
+        width: 100%;
+        border-top: 1px solid gray;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .rotate {
+        font-size: 7vw;
+        color: rgb(242, 107, 124);
+        -moz-transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+    }
+
+    .rotate.down {
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    .os_images {
+        width: 100%;
+    }
+
+    .os_images img {
+        width: 15vw;
+        height: 100%;
+    }
+
+    .order-head-curve {
+        font-size: 4vw;
+        color: white;
+        font-weight: 400;
+    }
+
+    .order-head-icon {
+        margin-right: 10vw;
+        text-align: center;
+        margin-top: 10vw;
+    }
+
+    .order-bill-count {
+        font-weight: 800;
+        color: white;
+        font-size: 8vw;
+        padding: 0;
+    }
+
+    .inner-order-history {
+        padding: 5px 0;
+        font-size: 5vw;
+        font-weight: 600;
+    }
+
+    .mar-r-0 {
+        margin-right: 0%
+    }
+
+    .order-item {
+        font-size: 5vw;
+        font-weight: 700;
+    }
+
+    .order-count {
+        font-size: 2.5vw;
+        font-weight: 500;
+        color: gray;
+    }
+
+    .order-current-status {
+        font-size: 3.5vw;
+        /* margin-top: 4.2vw; */
+        color: blue;
+        font-weight: 500;
+    }
+
+    .accordion-content {
+        width: 100%;
+    }
+
+    /* .dot::before{
+        border-left: 5px solid rgb(95, 219, 95);
+    } */
+
+
+    /* 
+    ul {
+        max-width: 400px;
+        margin: 0 auto;
+        list-style-type: none;
+        counter-reset: steps;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    ul li {
+        padding: 0 0 20px 50px;
+        position: relative;
+        margin: 0;
+    }
+
+    ul li:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: counter(steps);
+        counter-increment: steps;
+        border: 2px solid #000;
+        border-radius: 50%;
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        text-align: center;
+        line-height: 24px;
+        background: #fff;
+    }
+
+    ul li:before {
+        position: absolute;
+        left: 13px;
+        top: 0;
+        content: "";
+        height: 100%;
+        width: 0;
+        border: 2px solid #000;
+    }
+
+    ul li:last-of-type:before {
+        border: none;
+    } */
+
+    /* ul.status-bar-container li .row {
+        border-left: 2px solid black;
+    }
+    .status-bar-container li .row .col-1  .status-bar {
+        height: 100%;
+        background-color: #d70dff;
+    } */
+
+    .bg-blue {
+        background-color: rgb(11, 7, 255);
+    }
+
+    .bg-green {
+        background-color: rgb(36, 255, 7);
+    }
+
+    .bg-orange {
+        background-color: rgb(255, 139, 7);
+    }
+
+    ul.status-bar-container li {
+        padding: 10px 0;
+    }
+
+    @media screen and (max-width : 363px) {
+        .status-bar {
+            height: 7.5vh !important;
+        }
+    }
+
+    .status-bar {
+        height: 8.5vh;
+        width: 1vw;
+        position: absolute;
+        text-align: center;
+        /* border-bottom: 2px solid black; */
+        background-color: #000000;
+        margin-left: 2vw;
+    }
+
+    .status-blue,
+    .status-orange,
+    .status-green {
+        position: relative;
+    }
+
+    .dot {
+        height: 5vw;
+        width: 5vw;
+        border-radius: 50%;
+        display: inline-block;
+        border: 2px solid black;
+        position: absolute;
+    }
+    .status-text{
+        font-size: 3vw;
+        color: darkslategrey;
+
+    }
+</style>
+
+
+<script>
+    $(document).ready(function () {
+        $(".accordion-header").click(function () {
+            $(this).find('.rotate').toggleClass("down");
+        })
+    });
+</script>
+
+<body id="app">
+
+
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" id="menu_checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul class="menu_body_float" id="menu">
+                <li id="profile_details">
+                    <div class="profile_pic">
+                        <div class="row">
+                            <div class="col-4 offset-1">
+
+                            </div>
+                            <div class="col-6">
+                                Name
+                            </div>
+
+
+                        </div>
+                    </div>
+                </li>
+
+
+                <li class="menu_page_list"><a href="#" class="menu_page_list_link">Home</a></li>
+                <li class="menu_page_list"><a href="#" class="menu_page_list_link">Order</a></li>
+                <li class="menu_page_list"><a href="#" class="menu_page_list_link">Status</a></li>
+                <li class="menu_page_list"><a href="#" class="menu_page_list_link">Bills</a></li>
+                <li class="menu_page_list"><a href="#" class="menu_page_list_link">About Us</a></li>
+                <li class="menu_page_list"><a href="#" class="menu_page_list_link">Contact Us</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="page-content-main">
+
+        <div class="history-div">
+            <div class="curve row">
+                <div class="col">
+                    <div class="order-head-icon">
+                        <div class="os_images">
+                            <img src="Order_Status.png">
+                        </div>
+                        <div class="order-head-curve">
+                            Order Status
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 ">
+                    <div class="row mar-r-0 center-align">
+                        <div class="col-12 bill-status-count order-2">
+                            <div class="order-bill-count">
+                                21
+                            </div>
+                            <div class="order-head-curve">
+                                Bill No
+                            </div>
+                        </div>
+                        <div class="col-12 order-status-count order-1">
+                            <div class="order-bill-count">
+                                1998
+                            </div>
+                            <div class="order-head-curve">
+                                Total Order
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row order-history">
+                <div class="col">
+                    <div class="inner-order-history">
+                        Ongoing
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="inner-order-history">
+                        History
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="second-container">
+            <div class="order-list">
+                <div class="order-status-individual accordion" id="accordian1">
+
+                    <div class="accordion-header">
+                        <div class="row temp-row" data-bs-toggle="collapse" data-bs-target="#accordion-body1"
+                            aria-controls="accordion-body1">
+
+                            <div class="col temp-col">
+                                <div class="order-bundle">
+                                    <div class="order-item">
+                                        Broucher
+                                    </div>
+                                    <div class="order-count left-align">
+                                        8 page broucher
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col temp-col">
+                                <div class="order-bundle-status ">
+                                    <div class="row">
+                                        <div class="col-8 order-current-status">
+                                            Received Order
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fas fa-angle-down rotate"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div id="accordion-body1" class="accordion-collapse collapse" data-bs-parent="#accordian1">
+                        <div class="accordion-body">
+                            <div class="accordion-body-head">&nbsp;</div>
+                            <div class="accordion-content">
+                                <ul class="status-bar-container">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <div class="status-blue">
+                                                    <span class="status-bar">
+                                                        &nbsp;
+                                                    </span>
+                                                    <span class="dot bg-blue">&nbsp;</span>
+                                                </div>
+                                            </div>
+                                            <div class="status-text col">Status:completed</div>
+                                            <div class="status-text col">Status:time</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <div class="status-orange">
+                                                    <span class="status-bar">
+                                                        &nbsp;
+                                                    </span>
+                                                    <span class="dot bg-orange">&nbsp;</span>
+                                                </div>
+                                            </div>
+                                            <div class="status-text col">Status:completed</div>
+                                            <div class="status-text col">Status:time</div>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <div class="status-green">
+                                                    <!-- <span class="status-bar">
+                                                        &nbsp;
+                                                    </span> -->
+                                                    <span class="dot bg-green">&nbsp;</span>
+                                                </div>
+                                            </div>
+                                            <div class="status-text col">Status:completed</div>
+                                            <div class="status-text col">Status:time</div>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION 2 -->
+
+                <div class="order-status-individual accordion" id="accordian2">
+
+                    <div class="accordion-header">
+                        <div class="row temp-row" data-bs-toggle="collapse" data-bs-target="#accordion-body2"
+                            aria-controls="accordion-body2">
+
+                            <div class="col temp-col">
+                                <div class="order-bundle">
+                                    <div class="order-item">
+                                        Logo
+                                    </div>
+                                    <div class="order-count left-align">
+                                        3 Item
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col temp-col">
+                                <div class="order-bundle-status ">
+                                    <div class="row">
+                                        <div class="col-8 order-current-status">
+                                            Received Order
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fas fa-angle-down rotate"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div id="accordion-body2" class="accordion-collapse collapse" data-bs-parent="#accordian1">
+                        <div class="accordion-body">
+                            <div class="accordion-body-head">&nbsp;</div>
+                            <div class="accordion-content">
+                                <ul class="status-bar-container">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <div class="status-blue">
+                                                    <span class="status-bar">
+                                                        &nbsp;
+                                                    </span>
+                                                    <span class="dot bg-blue">&nbsp;</span>
+                                                </div>
+                                            </div>
+                                            <div class="status-text col">Status:completed</div>
+                                            <div class="status-text col">Status:time</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <div class="status-orange">
+                                                    <span class="status-bar">
+                                                        &nbsp;
+                                                    </span>
+                                                    <span class="dot bg-orange">&nbsp;</span>
+                                                </div>
+                                            </div>
+                                            <div class="status-text col">Status:completed</div>
+                                            <div class="status-text col">Status:time</div>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <div class="status-green">
+                                                    <!-- <span class="status-bar">
+                                                        &nbsp;
+                                                    </span> -->
+                                                    <span class="dot bg-green">&nbsp;</span>
+                                                </div>
+                                            </div>
+                                            <div class="status-text col">Status:completed</div>
+                                            <div class="status-text col">Status:time</div>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<!-- <i class="fas fa-angle-down rotate-icon"></i> -->
+
+
+<!--   <div class="order-status-individual accordion" id="accordian1">
+
+                <div class="accordion-header">
+                    <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-body1"
+                        aria-controls="accordion-body1">
+                        <div class="row">
+                            <div class="col">
+                                <div class="order-item">
+                                    Broucher
+                                </div>
+                                <div class="order-count">
+                                    8 page broucher
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">Received Order </div>
+                    </div>
+
+                    <div id="accordion-body1" class="accordion-collapse collapse" data-bs-parent="#accordian1">
+                        <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                            demonstrate
+                            the <code>.accordion-flush</code> class. This is the first item's accordion body.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> -->

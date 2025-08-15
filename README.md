@@ -48,8 +48,9 @@ The app serves as a **central hub** for clients to place orders, track project p
 | **Order Status** | Live tracking of project progress |
 | **Order Placing** | Form to submit new orders with project requirements |
 
-## File Structure
+## 📂 File Structure
 
+```
 config.xml
 package.json
 www
@@ -61,9 +62,20 @@ www
 ├── pages
 ├── pages-links
 └── index.html
-[Sample SQL files to showcase backend structure]
-└── id17502114_design_corner_app.sql
 
+Sample SQL files to showcase backend structure:
+└── id17502114_design_corner_app.sql
+public-html
+├── control
+├── css
+├── images
+├── img
+├── js
+├── Menu
+├── pages
+├── .htaccess
+└── index.php
+```
 ## 🎯 Purpose
 This app streamlines the client experience for **Design Corner**, allowing:
 - Easy order placement

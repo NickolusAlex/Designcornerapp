@@ -53,15 +53,14 @@ The app serves as a **central hub** for clients to place orders, track project p
 config.xml
 package.json
 www
-    │
-    ├── css
-    ├── images
-    ├── img
-    ├── js
-    ├── Menu
-    ├── pages
-    ├── pages-links
-    └── index.html
+├── css
+├── images
+├── img
+├── js
+├── Menu
+├── pages
+├── pages-links
+└── index.html
 [Sample SQL files to showcase backend structure]
 └── id17502114_design_corner_app.sql
 

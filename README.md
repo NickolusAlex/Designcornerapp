@@ -99,3 +99,13 @@ Order Placed → Proof Uploaded → Client Review → Payment → Delivery
 
 ## 📄 License
 This project is **open-source**, but libraries or frameworks used within may have their own respective licenses.
+
+
+---
+
+## 📬 Contact
+
+For questions, feedback, or collaboration, feel free to reach out:
+- Name: Nithyanandhan V
+- Email: nithyanandha.velliyangiri@gmail.com
+- GitHub: [your-github-profile](https://github.com/NickolusAlex)
